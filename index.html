@@ -49,10 +49,16 @@
             }
         }
         
-        const playerSelection = "SciSSorS";
-        const computerSelection = getComputerChoice();
-        console.log(computerSelection);
-        console.log(playRound(playerSelection, computerSelection));
+        function game(){
+            for (let i=0; i<5; i++){
+                let playerSelection=prompt("Choose between Rock, Paper and Scissors:");
+                const computerSelection = getComputerChoice();
+                console.log("Computers choice: "+computerSelection);
+                console.log(playRound(playerSelection, computerSelection));
+            }
+        }
+
+        game();
     </script>
 </body>
 </html>
