@@ -11,7 +11,7 @@ function resetGame(){
     choicesBox.innerHTML="";
     winner.innerHTML="";
     let buttons=document.getElementById("button-container");
-    buttons.style.display="block";
+    buttons.style.display="flex";
 }
 
 function getComputerChoice(){
