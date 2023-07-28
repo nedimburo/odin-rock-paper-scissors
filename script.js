@@ -1,11 +1,7 @@
 let playerScore=0;
 let computerScore=0;
-
-
-function writeScore(score1, score2){
-    let globalScore=document.querySelector("#score");
-    globalScore.textContent=`${score1} - ${score2}`;
-}
+let globalScore=document.querySelector("#score");
+let choicesBox=document.querySelector("#choices");
 
 function getComputerChoice(){
     const choices=["Rock", "Paper", "Scissors"];
@@ -14,44 +10,47 @@ function getComputerChoice(){
 }
 
 function playRound(playerSelection, computerSelection) {
+    let message="";
     if (playerSelection.toLowerCase()=="rock"){
         if (computerSelection.toLowerCase()=="paper"){
             computerScore++;
-            //return "You lose! Paper beats rock.";
+            message="You lose! Paper beats rock.";
         }
         else if (computerSelection.toLowerCase()=="scissors"){
             playerScore++;
-            //return "You win! Rock beats scissors.";
+            message="You win! Rock beats scissors.";
         }
         else{
-            //return "It's even. Rock can't beat rock."
+            message="It's even. Rock can't beat rock."
         }
     }
     else if (playerSelection.toLowerCase()=="paper"){
         if (computerSelection.toLowerCase()=="scissors"){
             computerScore++;
-            //return "You lose! Scissors beat paper.";
+            message="You lose! Scissors beat paper.";
         }
         else if (computerSelection.toLowerCase()=="rock"){
             playerScore++;
-            //return "You win! Paper beats rock.";
+            message="You win! Paper beats rock.";
         }
         else{
-            //return "It's even. Paper can't beat paper.";
+            message="It's even. Paper can't beat paper.";
         }
     }
     else{
         if (computerSelection.toLowerCase()=="rock"){
             computerScore++;
-            //return "You lose! Rock beats scissors.";
+            message="You lose! Rock beats scissors.";
         }
         else if (computerSelection.toLowerCase()=="paper"){
             playerScore++;
-            //return "You win! Scissors beat paper.";
+            message="You win! Scissors beat paper.";
         }
         else{
-            //return "It's even. Scissors can't beat scissors.";
+            message="It's even. Scissors can't beat scissors.";
         }
     }
-    writeScore(playerScore, computerScore);
+    
+    choicesBox.innerHTML=`Player has chosen: ${playerSelection}<br>Computer has chosen: ${computerSelection}<br>${message}`;
+    globalScore.textContent=`${playerScore} - ${computerScore}`;
 }
