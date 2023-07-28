@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Rock, Paper, Scissors</h1>
-    <div>
+    <div id="button-container">
         <button onclick="playRound('Rock', getComputerChoice())" id="rock-btn">Rock</button>
         <button onclick="playRound('Paper', getComputerChoice())" id="paper-btn">Paper</button>
         <button onclick="playRound('Scissors', getComputerChoice())" id="scissors-btn">Scissors</button>
@@ -15,6 +15,10 @@
     <div id="results-container">
         <div id="choices"></div>
         <div id="score"></div>
+        <div id="game-winner"></div>
+    </div>
+    <div id="restart-button-container">
+        <button onclick="resetGame()">Restart the game</button>
     </div>
     <script src="./script.js"></script>
 </body>

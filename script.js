@@ -2,11 +2,35 @@ let playerScore=0;
 let computerScore=0;
 let globalScore=document.querySelector("#score");
 let choicesBox=document.querySelector("#choices");
+let winner=document.querySelector("#game-winner");
+
+function resetGame(){
+    playerScore=0;
+    computerScore=0;
+    globalScore.innerHTML="";
+    choicesBox.innerHTML="";
+    winner.innerHTML="";
+    let buttons=document.getElementById("button-container");
+    buttons.style.display="block";
+}
 
 function getComputerChoice(){
     const choices=["Rock", "Paper", "Scissors"];
     let randomPick=Math.floor(Math.random()*3);
     return choices[randomPick];
+}
+
+function checkScore(){
+    if (playerScore==5 || computerScore==5){
+        if (playerScore==5){
+            winner.innerHTML=`<h2>GAME OVER</h2><br>Player is the winner of the game.`;
+        }
+        else{
+            winner.innerHTML=`<h2>GAME OVER</h2><br>Computer is the winner of the game.`;
+        }
+        let buttons=document.getElementById("button-container");
+        buttons.style.display="none";
+    }
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -50,7 +74,7 @@ function playRound(playerSelection, computerSelection) {
             message="It's even. Scissors can't beat scissors.";
         }
     }
-    
     choicesBox.innerHTML=`Player has chosen: ${playerSelection}<br>Computer has chosen: ${computerSelection}<br>${message}`;
-    globalScore.textContent=`${playerScore} - ${computerScore}`;
+    globalScore.textContent=`Player: ${playerScore} - Computer: ${computerScore}`;
+    checkScore();
 }
