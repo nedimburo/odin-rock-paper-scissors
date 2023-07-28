@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+.main-title{
+    font-size: 48px;
+    padding: 10px;
+}
+.sub-title{
+    font-size: 24px;
+    font-style: italic;
+}
+#button-container{
+
+}
+button{
+    padding: 5px 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #8cff69;
+    font-weight: 800;
+}
