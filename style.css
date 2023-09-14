@@ -7,6 +7,7 @@ body{
     width: 1000px;
     margin: 0 auto;
     text-align: center;
+    background-color: #ffe0b5;
 }
 .main-title{
     font-size: 48px;
@@ -28,19 +29,28 @@ body{
 button{
     padding: 8px 15px;
     font-size: 18px;
-    border: none;
+    border: 4px solid white;
     border-radius: 5px;
-    background-color: #8cff69;
+    background-color: black;
+    color: white;
     font-weight: 800;
+    box-shadow: 2px 2px 5px black;
+}
+button:hover{
+    border: 4px solid black;
+    background-color: white;
+    color: black;
 }
 #results-container{
     margin: 15px;
 }
 #score{
+    margin-top: 10px;
     font-size: 20px;
     font-weight: 600;
 }
 #game-winner{
+    margin-top: 10px;
     font-size: 24px;
     font-weight: 800;
 }
