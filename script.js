@@ -78,3 +78,21 @@ function playRound(playerSelection, computerSelection) {
     globalScore.textContent=`Player: ${playerScore} - Computer: ${computerScore}`;
     checkScore();
 }
+
+let rockButton=document.getElementById("rock-btn");
+rockButton.addEventListener("click", ()=>{
+    playRound('Rock', getComputerChoice());
+});
+
+let paperButton=document.getElementById("paper-btn");
+paperButton.addEventListener("click", ()=>{
+    playRound('Paper', getComputerChoice());
+});
+
+let scissorsButton=document.getElementById("scissors-btn");
+scissorsButton.addEventListener("click", ()=>{
+    playRound('Scissors', getComputerChoice());
+});
+
+let resetGameButton=document.getElementById("restart-game");
+resetGameButton.addEventListener("click", resetGame);
